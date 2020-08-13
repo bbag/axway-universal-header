@@ -56,6 +56,7 @@ $color-header: #FFF;
 $color-header-active: #2C3A44;
 $color-link-hover: #006580;
 $color-link-hover-bg: #F4F4F4;
+$color-hr: #D1D2D3;
 
 $ease-out-cubic: cubic-bezier(0.2, 0, 0.2, 1);
 $ease-in-cubic: cubic-bezier(0.8, 0, 0.8, 1);
@@ -713,7 +714,7 @@ template {
 
 .header__logo--text {
     fill: $color-header-active;
-    transition: fill 200ms ease;
+    transition: fill 150ms ease;
 
     .header__logo:focus & {
         fill: $color-axway-red;
@@ -740,13 +741,6 @@ template {
     font-size: 1.125rem;
 }
 
-.icon--dots {
-    fill: currentColor;
-    height: 1.125rem;
-    stroke-width: 0;
-    width: 1.125rem;
-}
-
 // Header > Nav Links
 .header__nav-links {
     @include align-items(center);
@@ -768,7 +762,7 @@ template {
 }
 
 .header__nav-links__item {
-    transition: all 200ms ease-out;
+    transition: all 150ms ease-out;
 
     &:hover,
     &:focus {
@@ -837,28 +831,67 @@ template {
     text-transform: uppercase;
 }
 
-.icon--dropdown {
+// Icons
+[class^='header-icon--'] {
     fill: none;
     height: auto;
-    margin-left: 0.5rem;
     stroke: currentColor;
     stroke-width: 1;
     stroke-linecap: round;
     stroke-linejoin: round;
-    width: 1rem
+    width: 1.5rem;
+
+    &:first-child:not(:last-child) {
+        margin-right: 0.5rem;
+    }
+
+    &:last-child:not(:first-child) {
+        margin-left: 0.5rem;
+    }
 }
 
+.header-icon-- {
+    &dots {
+        fill: currentColor;
+        height: 1.125rem;
+        stroke-width: 0;
+        width: 1.125rem;
+    }
+    
+    &dropdown {
+        width: 1rem;
+    }
+
+    &globe {
+        stroke-width: 1.25;
+        width: 1.25rem;
+    }
+
+    &notifications {
+        width: 1.5rem;
+
+        &.has-notification .header-notification-dot {
+            fill: $color-axway-red;
+            // stroke: #000;
+            stroke: $color-header;
+            stroke-width: 2;
+        }
+    }
+}
+
+// Dropdown menus
 .header__dropdown-menu {
     background: $color-header;
     border: 1px solid #D8D9D7;
     border-top: 0;
     // box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
+    min-width: 100%;
     opacity: 0;
     padding: 0;
     position: absolute;
     right: 0;
     top: 100%;
-    transition: all 200ms ease-out;
+    transition: all 150ms ease-out;
     visibility: hidden;
 
     [data-header-dropdown-toggle='true'] + &,
@@ -866,6 +899,15 @@ template {
     .header__nav-links__item:focus-within & {
         opacity: 1;
         visibility: visible;
+    }
+
+    header .header__nav-links__item & hr {
+        border: 0;
+        border-radius: 1rem;
+        height: 0.25rem;
+        background: $color-link-hover-bg;
+        margin: 0.5rem;
+        outline: none;
     }
 }
 
@@ -876,7 +918,7 @@ template {
         display: block;
         padding: 0.5rem;
         text-decoration: none;
-        transition: all 200ms ease-out;
+        transition: all 150ms ease-out;
         white-space: nowrap;
         width: 100%;
 

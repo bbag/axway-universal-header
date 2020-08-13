@@ -349,7 +349,7 @@ template {
 
 .header__logo--text {
   fill: #2C3A44;
-  transition: fill 200ms ease;
+  transition: fill 150ms ease;
 }
 
 .header__logo:focus .header__logo--text {
@@ -394,13 +394,6 @@ template {
   font-size: 1.125rem;
 }
 
-.icon--dots {
-  fill: currentColor;
-  height: 1.125rem;
-  stroke-width: 0;
-  width: 1.125rem;
-}
-
 .header__nav-links {
   -webkit-box-align: center;
   -ms-flex-align: center;
@@ -437,7 +430,7 @@ template {
 }
 
 .header__nav-links__item {
-  transition: all 200ms ease-out;
+  transition: all 150ms ease-out;
 }
 
 .header__nav-links__item:hover, .header__nav-links__item:focus {
@@ -524,27 +517,61 @@ template {
   text-transform: uppercase;
 }
 
-.icon--dropdown {
+[class^='header-icon--'] {
   fill: none;
   height: auto;
-  margin-left: 0.5rem;
   stroke: currentColor;
   stroke-width: 1;
   stroke-linecap: round;
   stroke-linejoin: round;
+  width: 1.5rem;
+}
+
+[class^='header-icon--']:first-child:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+[class^='header-icon--']:last-child:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.header-icon--dots {
+  fill: currentColor;
+  height: 1.125rem;
+  stroke-width: 0;
+  width: 1.125rem;
+}
+
+.header-icon--dropdown {
   width: 1rem;
+}
+
+.header-icon--globe {
+  stroke-width: 1.25;
+  width: 1.25rem;
+}
+
+.header-icon--notifications {
+  width: 1.5rem;
+}
+
+.header-icon--notifications.has-notification .header-notification-dot {
+  fill: #D22630;
+  stroke: #FFF;
+  stroke-width: 2;
 }
 
 .header__dropdown-menu {
   background: #FFF;
   border: 1px solid #D8D9D7;
   border-top: 0;
+  min-width: 100%;
   opacity: 0;
   padding: 0;
   position: absolute;
   right: 0;
   top: 100%;
-  transition: all 200ms ease-out;
+  transition: all 150ms ease-out;
   visibility: hidden;
 }
 
@@ -555,12 +582,21 @@ template {
   visibility: visible;
 }
 
+header .header__nav-links__item .header__dropdown-menu hr {
+  border: 0;
+  border-radius: 1rem;
+  height: 0.25rem;
+  background: #F4F4F4;
+  margin: 0.5rem;
+  outline: none;
+}
+
 .header__dropdown-menu__item a {
   color: inherit;
   display: block;
   padding: 0.5rem;
   text-decoration: none;
-  transition: all 200ms ease-out;
+  transition: all 150ms ease-out;
   white-space: nowrap;
   width: 100%;
 }

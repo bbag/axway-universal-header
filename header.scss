@@ -675,6 +675,14 @@ template {
 /*  CUSTOM STYLES                                          */
 /*---------------------------------------------------------*/
 
+@font-face {
+    font-family: "Axway-Platform-Icons";
+    src: url("Axway-Platform-Icons.woff2") format("woff2");
+    font-weight: normal;
+    font-style: normal;
+    font-display: block
+}
+
 // Header
 .header {
     background: $color-header;
@@ -708,7 +716,7 @@ template {
     margin: 0 1rem;
 
     & svg {
-        height: 1.875rem;
+        height: 2.25rem;
     }
 }
 
@@ -739,7 +747,8 @@ template {
 }
 
 .header__title {
-    font-size: 1.125rem;
+    font-size: 1rem;
+    font-weight: bold;
 }
 
 // Header > Nav Links
@@ -916,6 +925,208 @@ template {
     &:last-child:not(:first-child) {
         margin-left: 0.5rem;
     }
+
+    &::before {
+        color: $color-axway-teal;
+        font-size: 1rem;
+    }
+}
+
+.platform-icon- {
+
+    &book::before {
+        content: "";
+    }
+
+    &rocket::before {
+        content: "";
+    }
+
+    &globe::before {
+        content: "";
+    }
+
+    &lifebuoy::before {
+        content: "";
+    }
+
+    &cap::before {
+        content: "";
+    }
+
+    &basket::before {
+        content: "";
+    }
+
+    &axway::before {
+        color: $color-axway-red;
+        content: "";
+    }
+
+    &document::before {
+        content: "";
+    }
+
+    &youtube::before {
+        content: "";
+    }
+
+    &home::before {
+        content: "";
+    }
+
+    &dashboard::before {
+        content: "";
+    }
+
+    &central::before {
+        content: "";
+    }
+
+    &catalog::before {
+        content: "";
+    }
+
+    &meshgov::before {
+        content: "";
+    }
+
+    &explore::before {
+        content: "";
+    }
+}
+
+[class^='header-icon--flag-'] {
+    background: red;
+    content: "";
+    display: block;
+    height: 0.875rem;
+    position: relative;
+    width: 1.25rem;
+
+    &::after,
+    &::before {
+        content: "";
+        position: absolute;
+    }
+}
+
+.header-icon--flag- {
+
+    &en {
+        background: linear-gradient(to bottom,
+            rgba(255,50,50,1) 8%,
+            rgba(255,255,255,1) 8%,
+            rgba(255,255,255,1) 15%,
+            rgba(255,50,50,1) 15%,
+            rgba(255,50,50,1) 23%,
+            rgba(255,255,255,1) 23%,
+            rgba(255,255,255,1) 31%,
+            rgba(255,50,50,1) 31%,
+            rgba(255,50,50,1) 38%,
+            rgba(255,255,255,1) 38%,
+            rgba(255,255,255,1) 46%,
+            rgba(255,50,50,1) 46%,
+            rgba(255,50,50,1) 54%,
+            rgba(255,255,255,1) 54%,
+            rgba(255,255,255,1) 62%,
+            rgba(255,50,50,1) 62%,
+            rgba(255,50,50,1) 69%,
+            rgba(255,255,255,1) 69%,
+            rgba(255,255,255,1) 77%,
+            rgba(255,50,50,1) 77%,
+            rgba(255,50,50,1) 84%,
+            rgba(255,255,255,1) 84%,
+            rgba(255,255,255,1) 92%,
+            rgba(255,50,50,1) 92%);
+
+        &::after {
+            background: #FFF;
+            border-radius: 100%;
+            box-shadow: 0.125rem 0.125rem #FFF,
+                        0 0.25rem #FFF,
+                        0.375rem 0.125rem #FFF,
+                        0.25rem 0 #FFF,
+                        0.5rem 0 #FFF,
+                        0.25rem 0.25rem #FFF,
+                        0.5rem 0.25rem #FFF;
+            height: 0.0625rem;
+            left: 0.0625rem;
+            top: 0.0625rem;
+            width: 0.0625rem;
+        }
+
+        &::before {
+            background: #1763ED;
+            height: 0.4675rem;
+            left: 0;
+            top: 0;
+            width: 0.6875rem;
+        }
+    }
+
+    &es {
+        background: #E62F35;
+
+        &::after {
+            background: #C74324;
+            box-shadow: 0.125rem 0 #ED768A,
+                        0 0.125rem #DF6E2A,
+                        0.125rem 0.125rem #C74324;
+            height: 0.125rem;
+            left: 0.25rem;
+            top: 0.3125rem;
+            width: 0.125rem;
+        }
+
+        &::before {
+            background: #F9EB12;
+            height: 0.375rem;
+            left: 0;
+            top: 0.25rem;
+            width: 100%;
+        }
+    }
+
+    &de {
+        background: #DB0000;
+
+        &::after {
+            background: #F9CA00;
+            bottom: 0;
+            height: 33.33%;
+            left: 0;
+            width: 100%;
+        }
+
+        &::before {
+            background: #000;
+            height: 33.33%;
+            left: 0;
+            top: 0;
+            width: 100%;
+        }
+    }
+
+    &fr {
+        background: #FFF;
+
+        &::after {
+            background: #1763ED;
+            height: 0.875rem;
+            left: 0;
+            top: 0;
+            width: 0.375rem;
+        }
+
+        &::before {
+            background: #E62F35;
+            height: 0.875rem;
+            right: 0;
+            top: 0;
+            width: 0.375rem;
+        }
+    }
 }
 
 // Dropdown menus
@@ -930,8 +1141,9 @@ template {
 }
 
 .header__dropdown-menu {
-    border-top: 0;
-    // box-shadow: 0 0.125rem 0.125rem rgba(0, 0, 0, 0.1);
+    // border-top: 0;
+    box-shadow: 0 0.125rem 0.375rem rgba(0, 0, 0, 0.1);
+    font-size: 0.875rem;
     min-width: 100%;
     padding: 0;
     right: 0;
@@ -952,8 +1164,8 @@ template {
     header & hr {
         border: 0;
         border-radius: 1rem;
-        height: 0.25rem;
-        background: $color-link-hover-bg;
+        height: 1px;
+        background: $color-axway-light-gray;
         margin: 0.5rem;
         outline: none;
     }

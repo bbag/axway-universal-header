@@ -372,6 +372,7 @@ template {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  position: relative;
 }
 
 .header__left > button,
@@ -427,6 +428,7 @@ template {
   display: -ms-flexbox;
   display: -webkit-flex;
   display: flex;
+  text-align: center;
 }
 
 .header__nav-links__item {
@@ -517,6 +519,16 @@ template {
   text-transform: uppercase;
 }
 
+.header__item-text {
+  -webkit-box-flex: 1 1 auto;
+  -moz-box-flex: 1 1 auto;
+  -webkit-flex: 1 1 auto;
+  -ms-flex: 1 1 auto;
+  flex: 1 1 auto;
+  text-align: left;
+  white-space: nowrap;
+}
+
 [class^='header-icon--'] {
   fill: none;
   height: auto;
@@ -562,18 +574,58 @@ template {
   stroke-width: 2;
 }
 
-.header__dropdown-menu {
+.header-icon--sub-menu {
+  margin-left: 0.5rem;
+  width: 0.625rem;
+}
+
+[class^='platform-icon-'] {
+  fill: none;
+  font-family: "Axway-Platform-Icons" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  line-height: 1;
+  stroke: currentColor;
+  stroke-width: 1;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  text-transform: none;
+  width: 1.5rem;
+}
+
+[class^='platform-icon-']:first-child:not(:last-child) {
+  margin-right: 0.5rem;
+}
+
+[class^='platform-icon-']:last-child:not(:first-child) {
+  margin-left: 0.5rem;
+}
+
+.header__dropdown-menu,
+.header__sub-menu {
   background: #FFF;
   border: 1px solid #D8D9D7;
-  border-top: 0;
-  min-width: 100%;
   opacity: 0;
-  padding: 0;
   position: absolute;
-  right: 0;
-  top: 100%;
   transition: all 150ms ease-out;
   visibility: hidden;
+}
+
+.header__dropdown-menu {
+  border-top: 0;
+  min-width: 100%;
+  padding: 0;
+  right: 0;
+  top: 100%;
+}
+
+.header__left .header__dropdown-menu {
+  left: 0;
+  right: unset;
 }
 
 [data-header-dropdown-toggle='true'] + .header__dropdown-menu,
@@ -583,7 +635,7 @@ template {
   visibility: visible;
 }
 
-header .header__nav-links__item .header__dropdown-menu hr {
+header .header__dropdown-menu hr {
   border: 0;
   border-radius: 1rem;
   height: 0.25rem;
@@ -592,7 +644,15 @@ header .header__nav-links__item .header__dropdown-menu hr {
   outline: none;
 }
 
-.header__dropdown-menu__item a {
+.header__dropdown-menu__title {
+  color: #6C1D45;
+  font-size: 0.875rem;
+  font-weight: bold;
+  padding: 0.375rem 0.5rem;
+}
+
+.header__dropdown-menu__item a,
+.header__dropdown-menu__item button {
   color: inherit;
   display: block;
   padding: 0.5rem;
@@ -602,9 +662,24 @@ header .header__nav-links__item .header__dropdown-menu hr {
   width: 100%;
 }
 
-.header__dropdown-menu__item a:hover, .header__dropdown-menu__item a:focus {
+.header__dropdown-menu__item a:hover, .header__dropdown-menu__item a:focus,
+.header__dropdown-menu__item button:hover,
+.header__dropdown-menu__item button:focus {
   background: #F4F4F4;
   color: #006580;
+}
+
+.header__sub-menu {
+  left: 100%;
+  padding: 0;
+  top: -1px;
+}
+
+[data-header-dropdown-toggle='true'] + .header__sub-menu,
+[data-header-dropdown-toggle]:focus + .header__sub-menu,
+.header__dropdown-menu__item:focus-within .header__sub-menu {
+  opacity: 1;
+  visibility: visible;
 }
 
 /*---------------------------------------------------------*/

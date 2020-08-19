@@ -10,7 +10,7 @@
     <body>
         <header class="header">
             <div class="header__left">
-                <button class="header__app-switcher header__nav-links__item header__button-unstyled">
+                <button class="header__app-switcher header__nav-links__item header__button-unstyled" data-header-dropdown-toggle="false">
                     <svg class="header-icon--dots" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 18 18">
                         <circle cx="2" cy="2" r="2" />
                         <circle cx="9" cy="2" r="2" />
@@ -23,6 +23,55 @@
                         <circle cx="16" cy="16" r="2" />
                     </svg>
                 </button>
+                <ul class="header__dropdown-menu">
+                    <li class="header__dropdown-menu__title">
+                        My Apps/Products
+                    </li>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Platform Home
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Dashboard
+                            </span>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Central
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Unified Catalog
+                            </span>
+                        </a>
+                    </li>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Mesh Governance
+                            </span>
+                        </a>
+                    </li>
+                    <hr>
+                    <li class="header__dropdown-menu__item">
+                        <a href="#">
+                            <span class="header__item-text">
+                                Explore More Products
+                            </span>
+                        </a>
+                    </li>
+                </ul>
         
                 <a class="header__logo" href="https://www.axway.com/">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 81 27.8">
@@ -51,26 +100,110 @@
                 <ul class="header__nav-links">
                     <li class="header__nav-links__item">
                         <a href="#">
-                            Product Documentation
+                            <span class="header__item-text">
+                                Product Documentation
+                            </span>
                         </a>
                     </li>
                     <li class="header__nav-links__item">
                         <button class="header__button-unstyled" data-header-dropdown-toggle="false">
-                            Help &amp; Resources
+                            <span class="header__item-text">
+                                Help &amp; Resources
+                            </span>
                             <svg class="header-icon--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
                                 <polyline points="2 4 8 10 14 4"/>
                             </svg>
                         </button>
                         <ul class="header__dropdown-menu">
-                            <li class="header__dropdown-menu__item">
-                                <a href="#">
-                                    Item One
-                                </a>
+                            <li class="header__dropdown-menu__title">
+                                Dropdown Title 1
                             </li>
                             <li class="header__dropdown-menu__item">
                                 <a href="#">
-                                    Item Two
+                                    <span class="platform-icon-">&empty;</span>
+                                    <span class="header__item-text">
+                                        Item One
+                                    </span>
                                 </a>
+                            </li>
+                            <li class="header__dropdown-menu__item">
+                                <button class="header__button-unstyled" data-header-dropdown-toggle="false">
+                                    <span class="platform-icon-"></span>
+                                    <span class="header__item-text">
+                                        Item Two
+                                    </span>
+                                    <svg class="header-icon--sub-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16">
+                                        <polyline points="2 2 8 8 2 14" />
+                                    </svg>
+                                </button>
+                                <ul class="header__sub-menu">
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 1
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 2
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 3
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 4
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <hr>
+                            <li class="header__dropdown-menu__title">
+                                Dropdown Title 2
+                            </li>
+                            <li class="header__dropdown-menu__item">
+                                <button class="header__button-unstyled" data-header-dropdown-toggle="false">
+                                    <span class="platform-icon-"></span>
+                                    <span class="header__item-text">
+                                        Item Three
+                                    </span>
+                                    <svg class="header-icon--sub-menu" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 10 16">
+                                        <polyline points="2 2 8 8 2 14" />
+                                    </svg>
+                                </button>
+                                <ul class="header__sub-menu">
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 5
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 6
+                                            </span>
+                                        </a>
+                                    </li>
+                                    <li class="header__sub-menu__item">
+                                        <a href="#">
+                                            <span class="header__item-text">
+                                                Sub-menu Item 7
+                                            </span>
+                                        </a>
+                                    </li>
+                                </ul>
                             </li>
                         </ul>
                     </li>
@@ -81,7 +214,9 @@
                                 <line x1="2" y1="12" x2="22" y2="12"/>
                                 <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/>
                             </svg>
-                            EN
+                            <span class="header__item-text">
+                                EN
+                            </span>
                             <svg class="header-icon--dropdown" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 14">
                                 <polyline points="2 4 8 10 14 4" />
                             </svg>
@@ -148,6 +283,9 @@
                     </li>
                 </ul>
             </nav>
+            <script type="text/javascript">
+
+            </script>
         </header>
     </body>
 </html>

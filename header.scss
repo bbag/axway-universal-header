@@ -833,15 +833,20 @@ template {
 
 .header__user__avatar {
     @include align-items(center);
-    background: $color-axway-teal;
-    color: #FFF;
+    background: $color-link-hover-bg;
+    color: $color-axway-teal;
     // border: 1px solid currentColor;
     border-radius: 10em;
     @include display-flex();
     font-size: 0.875rem;
     height: 2rem;
     @include justify-content(center);
+    transition: background-color 100ms ease-out;
     width: 2rem;
+
+    .header__nav-links__item > button:hover & {
+        background: #FFF;
+    }
 }
 
 .header__user__info {
